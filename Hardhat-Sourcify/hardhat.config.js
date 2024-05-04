@@ -7,23 +7,17 @@ const path = require("path");
 require("@nomiclabs/hardhat-ethers");
 require("@nomicfoundation/hardhat-chai-matchers");
 require("@nomicfoundation/hardhat-verify");
-let BBTestnet;
-try {
-  BBTestnet = JSON.parse(
-    fs.readFileSync(path.join(__dirname, "./testnet.json")).toString().trim()
-  );
-} catch {}
 
 module.exports = {
   networks: {
     hardhat: {},
     buildbear:{
-      url:"https://rpc.dev.buildbear.io/sanam"
+      url:"<YOUR RPC URL>"
     }
   },
   sourcify: {
     enabled: true,
-    apiUrl: "https://rpc.dev.buildbear.io/verify/sourcify/server/sanam"
+    apiUrl: "https://rpc.buildbear.io/verify/sourcify/server/<YOUR NODE ID>"
   },
    etherscan:{
     enabled: false,
